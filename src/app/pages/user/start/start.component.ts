@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class StartComponent implements OnInit {
   qid: any;
-  questions: string | any[] | undefined;
+  questions: any | any[] ;
 
   marksGot = 0;
   correctAnswers = 0;
@@ -30,30 +30,39 @@ export class StartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.preventBackButton();
+    this.preventBackButton();
     this.qid = this._route.snapshot.params['qid'];
     console.log(this.qid);
-    this.loadQuestions();
+    this.loadQuestionls();
   }
-  loadQuestions() {
+  loadQuestionls() {
     this._question.getQuestionsOfSurveyForTest(this.qid).subscribe(
       (data: any) => {
         this.questions = data;
 
+        this.timer = this.questions.length * 2 * 60;
+
+        console.log(this.questions);
+        this.startTimer();
       },
 
       (error) => {
         console.log(error);
-        Swal.fire('Error', 'Error in loading questions of quiz', 'error');
+        Swal.fire('Error', 'Error in loading questions of ṣurvey', 'error');
       }
     );
   }
 
-  
+  preventBackButton() {
+    history.pushState(null, null!, location.href);
+    this.locationSt.onPopState(() => {
+      history.pushState(null, null!, location.href);
+    });
+  }
 
-  submitQuiz() {
+  submitSurvrey() {
     Swal.fire({
-      title: 'Do you want to submit the Survey?',
+      title: 'Do you want to submit the survey?',
       showCancelButton: true,
       confirmButtonText: `Submit`,
       icon: 'info',
@@ -64,8 +73,23 @@ export class StartComponent implements OnInit {
     });
   }
 
-  
-  
+  startTimer() {
+    let t = window.setInterval(() => {
+     
+      if (this.timer <= 0) {
+        this.evalQuiz();
+        clearInterval(t);
+      } else {
+        this.timer--;
+      }
+    }, 1000);
+  }
+
+  getFormattedTime() {
+    let mm = Math.floor(this.timer / 60);
+    let ss = this.timer - mm * 60;
+    return `${mm} min : ${ss} sec`;
+  }
 
   evalQuiz() {
     //calculation
@@ -82,8 +106,7 @@ export class StartComponent implements OnInit {
         console.log(error);
       }
     );
-    
-    
+
   }
 }
 

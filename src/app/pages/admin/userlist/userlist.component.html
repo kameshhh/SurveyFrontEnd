@@ -1,0 +1,39 @@
+
+<section class="vh-100 gradient-custom" style="background-color: #EFF5F5;">
+    <div class="container" style="padding-top: 25px; width: 50%;">
+       
+           <table class="table table-hover " >
+          <thead>
+              <tr>
+                  <th>UserName</th>
+                  <th>FIRSTNAME</th>
+                  <th>LASTNAME</th>
+                  <th>EMAIL</th>
+                  <th >ACTIONS</th>
+                  <!-- <th>Button</th> -->
+    
+    
+    
+                </tr>
+          </thead> 
+          <tbody>
+              <tr *ngFor="let p of userlist">
+                  <td>{{p.username}}</td>
+                  <td>{{p.firstName}}</td>
+                  <td>{{p.lastName}}</td>
+                  <td>{{p.email}}</td>
+                  <!-- <td>    <button mat-raised-button color="primary" [routerLink]="['/singleuserdetail',p.id,'view']" class="btn btn-warning" style="border-radius: 50px;">More Details </button>
+                  </td> -->
+                  <td>
+                    <button mat-raised-button  color="accent" type="button" style="border-radius: 50px;"(click)="deleteUser(p.id)">Delete</button>
+                  </td>
+    
+    
+              </tr>
+          </tbody>
+      </table>
+      
+      
+      
+      </div> 
+      </section>        

@@ -1,0 +1,11 @@
+.table{
+    width: 100%;
+    border: 1px solid red;
+
+}
+
+.table tr td{
+    padding: 10px 120px;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}

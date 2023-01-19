@@ -1,0 +1,69 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <mat-card class="mt20">
+            <mat-card-header>
+              <!-- heading -->
+              <mat-card-title>
+                Read the instructions of this page carefully
+              </mat-card-title>
+              <mat-card-subtitle> One step more to go </mat-card-subtitle>
+            </mat-card-header>
+  
+            <mat-card-content class="ml20">
+              <!-- content  -->
+  
+              <h1>{{ survey.title }}</h1>
+              <p>{{ survey.description }}</p>
+  
+              <mat-divider></mat-divider>
+              <br />
+              <h1>Important Instructions</h1>
+  
+              <ul>
+                <li>This survey is only for practice purpose.</li>
+  
+                <!-- Let the time of each questions is  2 minutes -->
+                <li>
+                  You have to submit survey with in
+                  <b> {{ survey.numberOfQuestions * 2 }} Minutes.</b>
+                </li>
+               
+                <li>
+                  There are <b>{{ survey.numberOfQuestions }} questions</b> in this
+                  survey.
+                </li>
+                
+                <li>All questions is of MCQ Types.</li>
+              </ul>
+  
+              <mat-divider></mat-divider>
+              <br />
+              <h1>Attempting Survey</h1>
+              <ul>
+                <li>Click <b>Start Survey</b> button to start the survey</li>
+               
+               
+                <li>Scroll downl to move to next question.</li>
+                <li>Click on Submit Survey button on completion of the survey.</li>
+
+              </ul>
+            </mat-card-content>
+            <mat-card-actions class="text-center">
+              <!-- actions -->
+              <button
+                (click)="startSurvey()"
+                class=""
+                mat-raised-button
+                color="primary"
+              >
+                Start SURVEY
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  

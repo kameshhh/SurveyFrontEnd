@@ -39,6 +39,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { LoadSurveyComponent } from './pages/user/load-survey/load-survey.component';
 import { StartComponent } from './pages/user/start/start.component';
 
+import { UpdateSurveyComponent } from './pages/admin/update-survey/update-survey.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { UserlistComponent } from './pages/admin/userlist/userlist.component';
+import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +64,11 @@ import { StartComponent } from './pages/user/start/start.component';
     AddQuestionsComponent,
 
     LoadSurveyComponent,
-     StartComponent
+     StartComponent,
+     UpdateSurveyComponent,
+     InstructionsComponent,
+     UserlistComponent,
+     UpdateUserComponent
 
   ],
   imports: [

@@ -9,8 +9,8 @@ import { QuizService } from 'src/app/services/quiz.service';
 })
 export class LoadSurveyComponent implements OnInit{
 catId: any;
-quizzes: any;
-constructor(private _route: ActivatedRoute, private _quiz: QuizService) {}
+surveys: any;
+constructor(private _route: ActivatedRoute, private servey: QuizService) {}
 
 ngOnInit(): void {
   this._route.params.subscribe((params) => {
@@ -18,26 +18,26 @@ ngOnInit(): void {
     if (this.catId == 0) {
       console.log('Load all the quiz');
 
-      this._quiz.getActiveQuizzes().subscribe(
+      this.servey.getActiveQuizzes().subscribe(
         (data: any) => {
-          this.quizzes = data;
-          console.log(this.quizzes);
+          this.surveys = data;
+          console.log(this.surveys);
         },
         (error) => {
           console.log(error);
-          alert('error in loading all quizzes');
+          alert('error in loading all surveys');
         }
       );
     } else {
-      console.log('Load specific quiz');
+      console.log('Load specific survey');
 
-      this._quiz.getActiveSurvyesOfCategory(this.catId).subscribe(
+      this.servey.getActiveSurvyesOfCategory(this.catId).subscribe(
         (data: any) => {
-          this.quizzes = data;
-          console.log(this.quizzes);
+          this.surveys = data;
+          console.log(this.surveys);
         },
         (error) => {
-          alert('error in loading quiz data');
+          alert('error in loading survey data');
         }
       );
     }

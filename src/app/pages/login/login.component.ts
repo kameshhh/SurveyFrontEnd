@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -57,17 +58,13 @@ export class LoginComponent implements OnInit {
         this.login.getCurrentUser().subscribe((user: any) => {
           this.login.setUser(user);
           console.log(user);
-          // redirect ...ADMIN: admin-dashboard
-      //     //redirect ...NORMAL:normal-dashboard
           if (this.login.getUserRole() == 'ADMIN') {
-            // admin dashboard
-      //       // window.location.href = '/admin';
+           
             this.router.navigate(['admin']);
             this.login.loginStatusSubject.next(true);
           } else if (this.login.getUserRole() == 'NORMAL') {
-      //       //normal user dashbaord
-            // window.location.href = '/user-dashboard';
-            this.router.navigate(['user-dashboard']);
+            Swal.fire('Success','Welcome ' +user.username )
+            this.router.navigate(['user-dashboard/0']);
             this.login.loginStatusSubject.next(true);
           } else {
             this.login.logout();

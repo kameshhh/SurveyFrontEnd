@@ -18,6 +18,11 @@ import { LoadSurveyComponent } from './pages/user/load-survey/load-survey.compon
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { UpdateSurveyComponent } from './pages/admin/update-survey/update-survey.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
+import { UserlistComponent } from './pages/admin/userlist/userlist.component';
+import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,pathMatch:'full',},
 
@@ -36,6 +41,7 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
+      
       {
         path: 'categories',
         component: ViewCategoriesComponent,
@@ -52,10 +58,10 @@ const routes: Routes = [
         path: 'add-quiz',
         component: AddSurveyComponent,
       },
-    //   {
-    //     path: 'quiz/:qid',
-    //     component: UpdateQuizComponent,
-    //   },
+      {
+        path: 'quiz/:qid',
+        component: UpdateSurveyComponent,
+      },
       {
         path: 'view-questions/:qid/:title',
         component: ViewQuestionsComponent,
@@ -64,6 +70,11 @@ const routes: Routes = [
         path: 'add-question/:qid/:title',
         component: AddQuestionsComponent,
       },
+      {
+        path: 'listofusers',
+        component: UserlistComponent,
+      },
+      
     ],
   },{
     path:'user-dashboard',
@@ -74,8 +85,30 @@ const routes: Routes = [
         path: ':catId',
         component: LoadSurveyComponent,
       },
+      
+      {
+        path: 'instructions/:qid',
+        component: InstructionsComponent,
+      },
+      
+      {
+        path: 'user/:qid',
+        component: UpdateUserComponent,
+      },
      
     ],
+  },{
+    path: 'start/:qid',
+    component: StartComponent,
+    canActivate: [NormalGuard],
+  },
+  {
+    path: 'user-profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'user/:qid',
+    component: UpdateUserComponent,
   },
 
 ];

@@ -1,8 +1,8 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
-      <h1 class="mt20">Available Quizzes</h1>
-      <div class="row mt20" *ngIf="quizzes">
-        <div class="col-md-4" *ngFor="let q of quizzes">
+      <h1 class="mt20">Available surveys</h1>
+      <div class="row mt20" *ngIf="surveys">
+        <div class="col-md-4" *ngFor="let q of surveys">
           <mat-card class="mb20">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
@@ -34,7 +34,7 @@
           </mat-card>
         </div>
   
-        <div class="col-md-12" *ngIf="quizzes.length == 0">
+        <div class="col-md-12" *ngIf="surveys.length == 0">
           <mat-card>
             <mat-card-content>
               <h1>No data in this category</h1>
