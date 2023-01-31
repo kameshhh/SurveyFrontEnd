@@ -24,6 +24,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 import { TakensurveyComponent } from './pages/admin/takensurvey/takensurvey.component';
+import { UsertakensurveyComponent } from './pages/admin/usertakensurvey/usertakensurvey.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,pathMatch:'full',},
 
@@ -79,6 +80,10 @@ const routes: Routes = [
         path: 'surveytaken',
         component: TakensurveyComponent,
       },
+      {
+        path: 'usertakensurveylist/:qusername',
+        component: UsertakensurveyComponent,
+      },
       
     ],
   },{
@@ -99,6 +104,10 @@ const routes: Routes = [
       {
         path: 'user/:qid',
         component: UpdateUserComponent,
+      },
+      {
+        path: 'usertakensurveylist/:qusername',
+        component: UsertakensurveyComponent,
       },
      
     ],

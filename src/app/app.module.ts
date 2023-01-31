@@ -44,6 +44,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 import { TakensurveyComponent } from './pages/admin/takensurvey/takensurvey.component';
+import { UsertakensurveyComponent } from './pages/admin/usertakensurvey/usertakensurvey.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { TakensurveyComponent } from './pages/admin/takensurvey/takensurvey.comp
      InstructionsComponent,
      UserlistComponent,
      UpdateUserComponent,
-     TakensurveyComponent
+     TakensurveyComponent,
+     UsertakensurveyComponent
 
   ],
   imports: [

@@ -8,11 +8,17 @@ import baseUrl from './helper';
 })
 export class UserserviceService {
 
+ 
+
   constructor(private http:HttpClient) { }
 
   public addUser(user:any){
     return this.http.post(`${baseUrl}/user/`,user)
 
+  }
+
+ public getUsertakensurveylist(qusername:any):Observable<any>{
+    return this.http.get(`http://localhost:8080/user/takensurvey/${qusername}`);
   }
 
   getuserlist():Observable<any>{

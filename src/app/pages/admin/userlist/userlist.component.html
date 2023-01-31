@@ -27,6 +27,9 @@
                   <td>
                     <button mat-raised-button  color="accent" type="button" style="border-radius: 50px;"(click)="deleteUser(p.id)">Delete</button>
                   </td>
+                  <td>
+                    <button mat-raised-button  color="accent" type="button" style="border-radius: 50px;"[routerLink]="['/admin/usertakensurveylist',p.username]" >Surveys Taken</button>
+                  </td>
     
     
               </tr>

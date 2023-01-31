@@ -1,12 +1,10 @@
 
 <section class="vh-100 gradient-custom" style="background-color: #EFF5F5;">
-    <div class="container" style="padding-top: 30px; width: 80%;">
+    <div class="container" style="padding-top: 30px; width: 50%;">
        
            <table class="table table-hover " >
           <thead>
               <tr>
-                  <th>USER ID</th>
-                  <th>USERNAME</th>
                   <th>SURVEY ID</th>
                   <th>SURVEYNAME</th>
                   <th >ATTEMPTED</th>
@@ -22,9 +20,7 @@
                 </tr>
           </thead> 
           <tbody>
-              <tr *ngFor="let p of takensurveylist">
-                  <td>{{p.userId}}</td>
-                  <td>{{p.username}}</td>
+              <tr *ngFor="let p of usertakensurveylist">
                   <td>{{p.sid}}</td>
                   <td>{{p.surveyname}}</td>
                   <td>{{p.attempted}}</td>
