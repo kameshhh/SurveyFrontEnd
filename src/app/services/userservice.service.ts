@@ -27,5 +27,8 @@ export class UserserviceService {
     return this.http.put(`${baseUrl}/user`, user);
   }
 
+  gettakensurveylist():Observable<any>{
+    return this.http.get("http://localhost:8080/user/alltakensurveydetails");
+  }
   
 }

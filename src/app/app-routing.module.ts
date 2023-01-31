@@ -23,6 +23,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartComponent } from './pages/user/start/start.component';
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
+import { TakensurveyComponent } from './pages/admin/takensurvey/takensurvey.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,pathMatch:'full',},
 
@@ -73,6 +74,10 @@ const routes: Routes = [
       {
         path: 'listofusers',
         component: UserlistComponent,
+      },
+      {
+        path: 'surveytaken',
+        component: TakensurveyComponent,
       },
       
     ],

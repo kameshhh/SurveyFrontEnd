@@ -1,0 +1,12 @@
+table tr td{
+    padding: 10px;
+}
+
+table tr th{
+    padding: 10px;
+   }
+
+table{
+    border-radius: 15px;
+    border: 1px solid black;
+}

@@ -1,6 +1,7 @@
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2';
 export class StartComponent implements OnInit {
   qid: any;
   questions: any | any[] ;
+  userResponse: any | any[] ;
 
   marksGot = 0;
   correctAnswers = 0;
@@ -21,12 +23,14 @@ export class StartComponent implements OnInit {
   isSubmit = false;
 
   timer: any;
+  user = null as any;
 
   constructor(
     private locationSt: LocationStrategy,
     private _route: ActivatedRoute,
     private _question: QuestionService,
-    private _quiz: QuizService
+    private _quiz: QuizService,
+    private login: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +38,7 @@ export class StartComponent implements OnInit {
     this.qid = this._route.snapshot.params['qid'];
     console.log(this.qid);
     this.loadQuestionls();
+    this.user = this.login.getUser();
   }
   loadQuestionls() {
     this._question.getQuestionsOfSurveyForTest(this.qid).subscribe(
@@ -69,6 +74,7 @@ export class StartComponent implements OnInit {
     }).then((e) => {
       if (e.isConfirmed) {
         this.evalQuiz();
+        // this.userRes();
       }
     });
   }
@@ -92,8 +98,6 @@ export class StartComponent implements OnInit {
   }
 
   evalQuiz() {
-    //calculation
-    //call to sever  to check questions
     this._question.evalSurvey(this.questions).subscribe(
       (data: any) => {
         console.log(data);
@@ -101,12 +105,40 @@ export class StartComponent implements OnInit {
         this.correctAnswers = data.correctAnswers;
         this.attempted = data.attempted;
         this.isSubmit = true;
+        this.userResponse=data;
+        this.userResponse.userId=this.user.id;
+        this.userResponse.sid=this.qid;
+        this.userResponse.username=this.user.username;
+        this.userResponse.surveyname=this.questions[0].quiz.title;
+        this._question.responseSurvey(this.userResponse).subscribe(
+          (data: any) => {
+          console.log(data)
+          // this.userResponse=data;
+          // this.marksGot = data.marksGot;
+          // this.correctAnswers = data.correctAnswers;
+          // this.attempted = data.attempted;
+          // this.isSubmit = true;
+          })
+      
       },
       (error) => {
         console.log(error);
       }
     );
+  
 
   }
+
+  // userRes(){
+  // this._question.responseSurvey(this.questions).subscribe(
+  //   (data: any) => {
+  //   console.log(data)
+  //   this.userResponse=data;
+  //   this.marksGot = data.marksGot;
+  //   this.correctAnswers = data.correctAnswers;
+  //   this.attempted = data.attempted;
+  //   this.isSubmit = true;
+  //   })
+  // }
 }
 

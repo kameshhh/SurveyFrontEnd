@@ -43,6 +43,7 @@ import { UpdateSurveyComponent } from './pages/admin/update-survey/update-survey
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
+import { TakensurveyComponent } from './pages/admin/takensurvey/takensurvey.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { UpdateUserComponent } from './pages/user/update-user/update-user.compon
      UpdateSurveyComponent,
      InstructionsComponent,
      UserlistComponent,
-     UpdateUserComponent
+     UpdateUserComponent,
+     TakensurveyComponent
 
   ],
   imports: [

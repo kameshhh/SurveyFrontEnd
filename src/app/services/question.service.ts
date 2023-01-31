@@ -24,9 +24,15 @@ export class QuestionService {
   public deleteQuestion(questionId: any) {
     return this._http.delete(`${baseUrl}/question/${questionId}`);
   }
+  public responseSurvey(userResponse: any) {
+    return this._http.post(` http://localhost:8080/question/userresponse
+    `, userResponse);
+  }
 
   public evalSurvey(questions: any) {
     return this._http.post(`${baseUrl}/question/eval-quiz`, questions);
   }
-}
 
+ 
+}
+// http://localhost:8080/question/userresponse

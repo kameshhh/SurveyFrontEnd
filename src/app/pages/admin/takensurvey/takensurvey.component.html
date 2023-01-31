@@ -1,0 +1,45 @@
+
+<section class="vh-100 gradient-custom" style="background-color: #EFF5F5;">
+    <div class="container" style="padding-top: 30px; width: 80%;">
+       
+           <table class="table table-hover " >
+          <thead>
+              <tr>
+                  <th>USER ID</th>
+                  <th>USERNAME</th>
+                  <th>SURVEY ID</th>
+                  <th>SURVEYNAME</th>
+                  <th >ATTEMPTED</th>
+
+                  <th >ATTEMPTED</th>
+
+                  <th >CORRECT</th>
+
+                  <th >MARKS</th>
+
+                 
+    
+    
+    
+                </tr>
+          </thead> 
+          <tbody>
+              <tr *ngFor="let p of takensurveylist">
+                  <td>{{p.userId}}</td>
+                  <td>{{p.username}}</td>
+                  <td>{{p.sid}}</td>
+                  <td>{{p.surveyname}}</td>
+                  <td>{{p.attempted}}</td>
+                  <td>{{p.correctAnswers}}</td>
+                  <td>{{p.marksGot}}</td>
+                
+    
+    
+              </tr>
+          </tbody>
+      </table>
+      
+      
+      
+      </div> 
+      </section>        
