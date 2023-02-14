@@ -25,6 +25,12 @@
   <button mat-stroked-button color="accent" class="ml20">
     Questions: {{ q.numberOfQuestions }}
   </button>
+  <button mat-stroked-button color="accent" class="ml20">
+    StartDate: {{ q.startDate }}
+  </button>
+  <button mat-stroked-button color="accent" class="ml20">
+    EndDate {{ q.endDate }}
+  </button>
   <button
     [routerLink]="'/admin/quiz/' + q.qId"
     mat-flat-button
@@ -33,7 +39,7 @@
   >
     Update
   </button>
-  <button mat-flat-button color="accent" class="ml20">Attempts</button>
+  <!-- <button mat-flat-button color="accent" class="ml20">Attempts</button> -->
 
   <button
     mat-flat-button

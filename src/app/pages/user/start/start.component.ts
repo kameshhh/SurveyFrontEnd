@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
+
+  Date1 :Date= new Date();
   qid: any;
   questions: any | any[] ;
   userResponse: any | any[] ;

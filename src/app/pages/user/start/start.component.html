@@ -10,6 +10,7 @@
             <h1 class="mt20">
               On Going Survey : <b>{{ questions[0].quiz.title }}</b>
             </h1>
+           
           </ng-container>
   
           <mat-card *ngFor="let q of questions; let i = index" class="mt10">
@@ -88,7 +89,7 @@
   </div>
   
   <!-- show the result -->
-  <div class="bootstrap-wrapper" *ngIf="isSubmit">
+  <div class="bootstrap-wrapper" *ngIf="isSubmit"  >
     <div class="row mt20">
       <div class="col-md-6 offset-md-3">
         <mat-card>

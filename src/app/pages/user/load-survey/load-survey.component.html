@@ -1,6 +1,12 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
       <h1 class="mt20">Available surveys</h1>
+      <!-- <h4 class="mt20" >
+        Current Date : <b>{{ Date1 }}</b> -->
+      <!-- </h4> -->
+      <h4 class="mt20" >
+        Current Date : <b>{{ Date2 }}</b>
+      </h4>
       <div class="row mt20" *ngIf="surveys">
         <div class="col-md-4" *ngFor="let q of surveys">
           <mat-card class="mb20">
@@ -17,12 +23,12 @@
               <p class="truncate">{{ q.description }}</p>
             </mat-card-content>
             <!-- <mat-card-action> -->
-              <button mat-button color="primary">View</button>
+              <button  (click)="setup()" mat-button color="primary">View</button>
               <button
                 mat-button
                 color="accent"
                 [routerLink]="'/user-dashboard/instructions/' + q.qId"
-                class="ml10"
+                class="ml10" 
               >
                 Start
               </button>
@@ -30,6 +36,12 @@
                 Questions :{{ q.numberOfQuestions }}
               </button>
               <button mat-button color="accent">M.M :{{ q.maxMarks }}</button>
+              <button mat-button color="accent">
+                StartDate :{{ q.startDate }}
+              </button>
+              <button mat-button color="accent">
+                EndDate :{{ q.endDate }}
+              </button>
             <!-- </mat-card-action> -->
           </mat-card>
         </div>

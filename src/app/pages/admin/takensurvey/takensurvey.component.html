@@ -14,6 +14,7 @@
                   <th >CORRECT</th>
 
                   <th >MARKS</th>
+                  <th >ACTIONS</th>
 
                  
     
@@ -30,6 +31,9 @@
                   <td>{{p.attempted}}</td>
                   <td>{{p.correctAnswers}}</td>
                   <td>{{p.marksGot}}</td>
+                  <td>
+                    <button mat-raised-button  color="accent" type="button" style="border-radius: 50px;"(click)="deleteTakenSurvey(p.id)">Delete</button>
+                  </td>
                 
     
     

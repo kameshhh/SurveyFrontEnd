@@ -17,6 +17,9 @@ export class AddSurveyComponent implements OnInit {
     description: '',
     maxMarks: '',
     numberOfQuestions: '',
+    startDate:'',
+    endDate:'',
+
     active: true,
     category: {
       cid: '',
@@ -63,6 +66,8 @@ export class AddSurveyComponent implements OnInit {
           description: '',
           maxMarks: '',
           numberOfQuestions: '',
+          startDate:'',
+          endDate:'',
           active: true,
           category: {
             cid: '',

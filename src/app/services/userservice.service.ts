@@ -29,6 +29,10 @@ export class UserserviceService {
     return this.http.delete(`${baseUrl}/user/${qId}`);
   }
 
+  public deleteTakenSurveyById(qSid: any) {
+    return this.http.delete(`${baseUrl}/user/takensurvey/${qSid}`);
+  }
+
   public updateUser(user: any) {
     return this.http.put(`${baseUrl}/user`, user);
   }

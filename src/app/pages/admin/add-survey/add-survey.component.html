@@ -45,6 +45,28 @@
                   />
                 </mat-form-field>
               </div>
+              <div>
+                <mat-form-field class="w100" appearance="fill">
+                  <mat-label>Start Date</mat-label>
+                  <input
+                    [(ngModel)]="quizData.startDate"
+                    type="date"
+                    name="startDate"
+                    placeholder="Enter here"
+                    matInput
+                  />
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>End Date</mat-label>
+                <input
+                  [(ngModel)]="quizData.endDate"
+                  type="date"
+                  name="endDate"
+                  placeholder="Enter here"
+                  matInput
+                />
+            </mat-form-field>
+              </div>
               <div class="col-md-6">
                 <!-- number of question to be shown  -->
                 <mat-form-field class="w100" appearance="fill">
